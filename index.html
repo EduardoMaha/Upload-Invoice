@@ -10,10 +10,12 @@
         label { font-weight: bold; }
         button { padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
         button:hover { background-color: #0056b3; }
+        .logo { display: block; margin: 0 auto 20px auto; width: 200px; }
     </style>
 </head>
 <body>
 <div class="container">
+    <img src="logo.png" alt="Maha Energy Logo" class="logo">
     <h2>Maha Energy Invoice Submission Form</h2>
 
     <form action="https://formsubmit.co/procurement@maha-energy.com" method="POST" enctype="multipart/form-data">
@@ -21,7 +23,6 @@
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_attachment" value="true">
-    <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
 
         <label>Please, inform name of the vendor:</label>
         <input type="text" name="vendor_name" required maxlength="1000">
@@ -72,9 +73,9 @@
         </select>
 
         <label>Amount of Invoice:</label>
-        <input type="number" name="invoice_amount" required maxlength="100" step="0.01">
+        <input type="number" name="invoice_amount" required maxlength="100" placeholder="e.g. 1,200.05">
 
-        <label>Upload File:</label>
+        <label>Upload File (Max. 25MB):</label>
         <input type="file" name="attachment" multiple required>
 
         <button type="submit">Submit Invoice</button>
