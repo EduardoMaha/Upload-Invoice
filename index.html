@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maha Energy Invoice Submission</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f0f4f8; margin: 0; padding: 20px; }
+        .container { max-width: 700px; margin: auto; background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+        input, textarea, select { width: 100%; padding: 8px; margin-bottom: 15px; border-radius: 4px; border: 1px solid #ccc; }
+        label { font-weight: bold; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Maha Energy Invoice Submission Form</h2>
+
+    <form action="https://formsubmit.co/procurement@maha-energy.com" method="POST" enctype="multipart/form-data">
+        <label>Please, inform name of the vendor:</label>
+        <input type="text" name="vendor_name" required maxlength="1000">
+
+        <label>Select a legal entity within the Maha Group:</label>
+        <select name="legal_entity" required>
+            <option value="">Select one</option>
+            <option>Maha Energy BRZ Ltda</option>
+            <option>Maha Energy Inc. (Indiana)</option>
+            <option>Maha Energy AB</option>
+            <option>Maha Energy Luxemburg S.a.r.l</option>
+            <option>Maha Energy Inc (Canada)</option>
+            <option>Maha Energy Latam S.L (Spain)</option>
+            <option>Maha Energy Inc (US) - LAK</option>
+            <option>Maha Energy Luxemburg (Sweden Branch)</option>
+            <option>Maha Latam Operacionies C.A. (Venezuela)</option>
+            <option>Maha Energy LLC</option>
+            <option>Maha Energy Brazil 1 (Sweden)</option>
+            <option>Maha Energy Brazil 2 (Sweden)</option>
+        </select>
+
+        <label>Type of Document:</label>
+        <select name="document_type" required>
+            <option>Invoice / Nota fiscal</option>
+            <option>Other / Outros</option>
+        </select>
+
+        <label>Invoice Number:</label>
+        <input type="text" name="invoice_number" required maxlength="100">
+
+        <label>Invoice issue date (MM/DD/YYYY):</label>
+        <input type="date" name="invoice_issue_date" required>
+
+        <label>Due date (MM/DD/YYYY):</label>
+        <input type="date" name="due_date" required>
+
+        <label>Description of invoice:</label>
+        <textarea name="invoice_description" maxlength="1000" required></textarea>
+
+        <label>Currency:</label>
+        <select name="currency" required>
+            <option>BRL - Real</option>
+            <option>USD - Dollar</option>
+            <option>SEK - Swedish Krona</option>
+            <option>NOK - Norwegian Krone</option>
+            <option>EUR - EURO</option>
+            <option>VES - Bolívar Venezuelano</option>
+        </select>
+
+        <label>Amount of Invoice:</label>
+        <input type="number" name="invoice_amount" required maxlength="100" step="0.01">
+
+        <label>Upload Files (max 10 files, 1GB each):</label>
+        <input type="file" name="invoice_files[]" multiple required>
+
+        <button type="submit">Submit Invoice</button>
+
+        <input type="hidden" name="_subject" value="New Invoice Submission">
+        <input type="hidden" name="_template" value="table">
+    </form>
+</div>
+</body>
+</html>
